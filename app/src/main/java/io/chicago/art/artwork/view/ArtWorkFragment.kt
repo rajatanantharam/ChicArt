@@ -1,19 +1,19 @@
-package io.chicago.art.collection.view
+package io.chicago.art.artwork.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import io.chicago.art.databinding.CollectionFragmentBinding
+import io.chicago.art.databinding.ArtworkFragmentBinding
 
-class CollectionFragment: Fragment() {
+class ArtWorkFragment: Fragment() {
 
-    private lateinit var binding: CollectionFragmentBinding
+    private lateinit var binding: ArtworkFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = CollectionFragmentBinding.inflate(inflater, container, false).also {
+    ) = ArtworkFragmentBinding.inflate(inflater, container, false).also {
         binding = it
     }.root
 }

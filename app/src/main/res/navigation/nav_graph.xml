@@ -4,7 +4,7 @@
     app:startDestination="@id/collectionContainerFragment">
     <fragment
         android:id="@+id/collectionContainerFragment"
-        android:name="io.chicago.art.collection.view.CollectionContainerFragment"
+        android:name="io.chicago.art.artwork.view.ArtWorkContainerFragment"
         android:label="CollectionContainerFragment" >
     </fragment>
 </navigation>

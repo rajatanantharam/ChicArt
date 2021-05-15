@@ -1,6 +1,6 @@
 package io.chicago.art.webservice
 
-import io.chicago.art.collection.dto.api.ArtWorks
+import io.chicago.art.artwork.dto.api.ArtWorks
 import retrofit2.http.GET
 import retrofit2.http.Query
 

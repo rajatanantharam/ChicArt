@@ -1,24 +1,24 @@
-package io.chicago.art.collection.view
+package io.chicago.art.artwork.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import io.chicago.art.databinding.CollectionContainerFragmentBinding
+import io.chicago.art.databinding.ArtworkContainerFragmentBinding
 
-class CollectionContainerFragment: Fragment() {
+class ArtWorkContainerFragment: Fragment() {
 
-    private lateinit var binding: CollectionContainerFragmentBinding
+    private lateinit var binding: ArtworkContainerFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = CollectionContainerFragmentBinding.inflate(inflater, container, false).also {
+    ) = ArtworkContainerFragmentBinding.inflate(inflater, container, false).also {
         binding = it
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.pager.adapter = CollectionPagerAdapter(this)
+        binding.pager.adapter = ArtWorkPagerAdapter(this)
     }
 }
