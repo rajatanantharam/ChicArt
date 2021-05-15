@@ -1,4 +1,4 @@
-package io.chicago.art.collection.fragments
+package io.chicago.art.collection.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

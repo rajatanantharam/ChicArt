@@ -1,4 +1,4 @@
-package io.chicago.art.collection.fragments
+package io.chicago.art.collection.view
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
