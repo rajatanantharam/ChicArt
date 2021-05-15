@@ -1,3 +1,3 @@
-package io.chicago.art.dto.api
+package io.chicago.art.collection.dto.api
 
 data class Data(val title: String, val thumbnail: Thumbnail)
