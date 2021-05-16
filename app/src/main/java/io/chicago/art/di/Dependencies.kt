@@ -2,11 +2,15 @@ package io.chicago.art.di
 
 import com.google.gson.Gson
 import io.chicago.art.ChicagoArtApplication
+import io.chicago.art.artwork.repository.ArtWorkRepository
+import io.chicago.art.artwork.repository.ArtWorkRepositoryImpl
+import io.chicago.art.artwork.viewmodel.ArtWorkViewModel
 import io.chicago.art.webservice.WebService
 import io.chicago.art.webservice.baseUrl
+import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -21,9 +25,13 @@ object Dependencies {
             single { provideOkHttpClient() }
             single { provideRetrofit(get(), get()) }
             single { provideAPIService(get()) }
+            single { Dispatchers.IO }
+
+            single {ArtWorkRepositoryImpl(get(), get()) as ArtWorkRepository}
+            viewModel { ArtWorkViewModel(get()) }
+
         }
         startKoin {
-            androidLogger()
             androidContext(chicagoArtApplication)
             modules(appModule)
         }
