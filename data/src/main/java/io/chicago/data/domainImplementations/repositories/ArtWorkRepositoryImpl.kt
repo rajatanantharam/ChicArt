@@ -1,4 +1,4 @@
-package io.chicago.data.repositories
+package io.chicago.data.domainImplementations.repositories
 
 import io.chicago.data.api.ArtWorkApiService
 import io.chicago.domain.common.DefaultViewState
@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class ArtWorkRepositoryImpl(private val artWorkApiService: ArtWorkApiService): ArtWorkRepository {
-    override suspend fun fetchArtworks(): DefaultViewState<ArtWorks>  =
+    override suspend fun fetchArtworks(): DefaultViewState<ArtWorks> =
         withContext(Dispatchers.IO) {
             try {
                 DefaultViewState.Success(artWorkApiService.getArtworks())
