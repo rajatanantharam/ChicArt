@@ -1,10 +1,12 @@
 package io.chicago.domain.common
 
-sealed class DefaultViewState<T> {
+import io.chicago.domain.entities.ArtWorks
 
-    class Loading<T> : DefaultViewState<T>()
+sealed class DefaultViewState {
 
-    class Error<T> : DefaultViewState<T>()
+    object Loading : DefaultViewState()
 
-    class Success<T>(val result: T) : DefaultViewState<T>()
+    class Error(val reason: String?) : DefaultViewState()
+
+    class Success(val result: ArtWorks) : DefaultViewState()
 }
