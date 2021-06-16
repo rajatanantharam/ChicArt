@@ -24,8 +24,7 @@ class ArtWorkContainerFragment: Fragment() {
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        artWorkViewModel.fetchArtworks()
-        artWorkViewModel.mutableViewState.observe(viewLifecycleOwner, {
+        artWorkViewModel.artWorks.observe(viewLifecycleOwner, {
             if (it is DefaultViewState.Success) {
                 binding.pager.adapter = ArtWorkPagerAdapter(this, getArtworkUIItems(it.result))
             }
